@@ -1,10 +1,5 @@
-# problemsolving
-problem solving repo which will have solutions to new coding problems.
-
+# Vault service app
+Basic springboot vault service to setup and read vault secrets
 --
 
-Primary language is java
-
-## Some of the problems are
-* Array List
-* String parsing
+### Still needs to add more maturity to code base
