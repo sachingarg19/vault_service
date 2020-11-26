@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.costipro'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework:spring-context:5.2.7.RELEASE'
+	implementation 'javax.inject:javax.inject:1'
+	implementation 'org.slf4j:slf4j-api:1.7.30'
+	implementation 'org.springframework.cloud:spring-cloud-starter-vault-config:2.2.3.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-vault-dependencies:2.2.3.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR6'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.vault:spring-vault-core:2.2.2.RELEASE'
+	implementation 'com.google.code.gson:gson:2.8.6'
+
+	implementation 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}

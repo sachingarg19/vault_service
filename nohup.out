@@ -1,0 +1,80 @@
+==> Vault server configuration:
+
+             Api Address: http://127.0.0.1:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+              Listener 1: tcp (addr: "127.0.0.1:8200", cluster address: "127.0.0.1:8201", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level: info
+                   Mlock: supported: false, enabled: false
+           Recovery Mode: false
+                 Storage: inmem
+                 Version: Vault v1.4.2
+
+WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+and starts unsealed with a single unseal key. The root token is already
+authenticated to the CLI, so you can immediately begin using Vault.
+
+You may need to set the following environment variable:
+
+PowerShell:
+    $env:VAULT_ADDR="http://127.0.0.1:8200"
+cmd.exe:
+    set VAULT_ADDR=http://127.0.0.1:8200
+
+The unseal key and root token are displayed below in case you want to
+seal/unseal the Vault or re-authenticate.
+
+Unseal Key: H6MmqV6lSHJkWEoQr4ypoy+ZadSQzrX8dL0wDdFYGxg=
+Root Token: 00000000-0000-0000-0000-000000000000
+
+Development mode should NOT be used in production installations!
+
+==> Vault server started! Log data will stream in below:
+
+2020-07-26T23:41:39.297-0400 [INFO]  proxy environment: http_proxy= https_proxy= no_proxy=192.168.99.100
+2020-07-26T23:41:39.299-0400 [WARN]  no `api_addr` value specified in config or in VAULT_API_ADDR; falling back to detection if possible, but this value should be manually set
+2020-07-26T23:41:39.327-0400 [ERROR] core: no seal config found, can't determine if legacy or new-style shamir
+2020-07-26T23:41:39.327-0400 [ERROR] core: no seal config found, can't determine if legacy or new-style shamir
+2020-07-26T23:41:39.327-0400 [INFO]  core: security barrier not initialized
+2020-07-26T23:41:39.327-0400 [INFO]  core: security barrier initialized: stored=1 shares=1 threshold=1
+2020-07-26T23:41:39.328-0400 [INFO]  core: post-unseal setup starting
+2020-07-26T23:41:39.343-0400 [INFO]  core: loaded wrapping token key
+2020-07-26T23:41:39.343-0400 [INFO]  core: successfully setup plugin catalog: plugin-directory=
+2020-07-26T23:41:39.343-0400 [INFO]  core: no mounts; adding default mount table
+2020-07-26T23:41:39.346-0400 [INFO]  core: successfully mounted backend: type=cubbyhole path=cubbyhole/
+2020-07-26T23:41:39.347-0400 [INFO]  core: successfully mounted backend: type=system path=sys/
+2020-07-26T23:41:39.347-0400 [INFO]  core: successfully mounted backend: type=identity path=identity/
+2020-07-26T23:41:39.349-0400 [INFO]  core: successfully enabled credential backend: type=token path=token/
+2020-07-26T23:41:39.349-0400 [INFO]  rollback: starting rollback manager
+2020-07-26T23:41:39.349-0400 [INFO]  core: restoring leases
+2020-07-26T23:41:39.350-0400 [INFO]  expiration: lease restore complete
+2020-07-26T23:41:39.350-0400 [INFO]  identity: entities restored
+2020-07-26T23:41:39.350-0400 [INFO]  identity: groups restored
+2020-07-26T23:41:39.350-0400 [INFO]  core: post-unseal setup complete
+2020-07-26T23:41:39.351-0400 [INFO]  core: root token generated
+2020-07-26T23:41:39.351-0400 [INFO]  core: pre-seal teardown starting
+2020-07-26T23:41:39.351-0400 [INFO]  rollback: stopping rollback manager
+2020-07-26T23:41:39.351-0400 [INFO]  core: pre-seal teardown complete
+2020-07-26T23:41:39.351-0400 [ERROR] core: no seal config found, can't determine if legacy or new-style shamir
+2020-07-26T23:41:39.351-0400 [INFO]  core.cluster-listener.tcp: starting listener: listener_address=127.0.0.1:8201
+2020-07-26T23:41:39.351-0400 [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=127.0.0.1:8201
+2020-07-26T23:41:39.352-0400 [INFO]  core: post-unseal setup starting
+2020-07-26T23:41:39.352-0400 [INFO]  core: loaded wrapping token key
+2020-07-26T23:41:39.352-0400 [INFO]  core: successfully setup plugin catalog: plugin-directory=
+2020-07-26T23:41:39.352-0400 [INFO]  core: successfully mounted backend: type=system path=sys/
+2020-07-26T23:41:39.352-0400 [INFO]  core: successfully mounted backend: type=identity path=identity/
+2020-07-26T23:41:39.352-0400 [INFO]  core: successfully mounted backend: type=cubbyhole path=cubbyhole/
+2020-07-26T23:41:39.353-0400 [INFO]  core: successfully enabled credential backend: type=token path=token/
+2020-07-26T23:41:39.353-0400 [INFO]  rollback: starting rollback manager
+2020-07-26T23:41:39.353-0400 [INFO]  core: restoring leases
+2020-07-26T23:41:39.354-0400 [INFO]  identity: entities restored
+2020-07-26T23:41:39.354-0400 [INFO]  expiration: lease restore complete
+2020-07-26T23:41:39.354-0400 [INFO]  identity: groups restored
+2020-07-26T23:41:39.354-0400 [INFO]  core: post-unseal setup complete
+2020-07-26T23:41:39.354-0400 [INFO]  core: vault is unsealed
+2020-07-26T23:41:39.359-0400 [INFO]  expiration: revoked lease: lease_id=auth/token/root/hf837a5a86f9c8f9a6280dd461ce6281e233ea4e875fd81fb975cde93b74c9f9c
+2020-07-26T23:41:39.378-0400 [INFO]  core: successful mount: namespace= path=secret/ type=kv
+2020-07-26T23:41:39.388-0400 [INFO]  secrets.kv.kv_5fa6dd90: collecting keys to upgrade
+2020-07-26T23:41:39.388-0400 [INFO]  secrets.kv.kv_5fa6dd90: done collecting keys: num_keys=1
+2020-07-26T23:41:39.388-0400 [INFO]  secrets.kv.kv_5fa6dd90: upgrading keys finished
+2020-07-26T23:41:39.801-0400 [INFO]  core: mount tuning of options: path=secret/ options=map[version:2]

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: vault-service
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      uri: http://localhost:8200
+      authentication: TOKEN
+      token: 00000000-0000-0000-0000-000000000000
+      connection-timeout: 5000
+      read-timeout: 15000
+      fail-fast: true
+      config:
+        order: -10
+      kv:
+        enabled: true
+        backend: secret
+        application-name: costipro/costipro-db
+        profiles: local, dev
+      encrypt:
+          enabled: true
+
+management:
+  health:
+    vault:
+      enabled: false
